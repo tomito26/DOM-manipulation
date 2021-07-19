@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="main-header">
+            <h1>Item Lister</h1>
+            <div class="search">
+                <input type="search" name="search-item" id="search-item" class="search-item" placeholder="search">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="header">
+                <h2>Add Item</h2>
+                <form class="addForm">
+                    <div class="user-input">
+                        <input type="text" class="item" id="item" placeholder="add items">
+                    </div>
+                    <input type="submit" value="submit" class="btn">
+                </form>
+            </div>
+            <div class="display-items">
+                <ul class="list-group-items">
+                    <li class="list-goup-item">Item 1 <button class="delete">X</button></li>
+                    <li class="list-goup-item">Item 2 <button class="delete">X</button></li>
+                    <li class="list-goup-item">Item 3 <button class="delete">X</button></li>
+                    <li class="list-goup-item">Item 4 <button class="delete">X</button></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
