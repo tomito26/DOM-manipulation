@@ -1,7 +1,7 @@
 let form = document.querySelector(".addForm");
 let itemList = document.querySelector(".list-group-items");
 let delBtns = document.querySelectorAll(".delete");
-
+let filter  = document.querySelector(".search")
 //form submit event & add item
 form.addEventListener("submit", (e)=>{
     e.preventDefault();
@@ -45,9 +45,31 @@ form.addEventListener("submit", (e)=>{
 for(let i = 0;i < delBtns.length;i++){
     delBtns[i].addEventListener("click",(e)=>{
         if(confirm("Are you sure?")){
-            let li = e.target.parentElement
+            let li = e.target.parentElement;
             // console.log(li)
-            itemList.removeChild(li)
+            itemList.removeChild(li);
+        };
+    });
+};
+
+
+//filter items
+filter.addEventListener("keyup",(e)=>{
+    //convert text to lowercase
+    let text = e.target.value.toLowerCase();
+    // console.log(text);
+
+    //get lis
+    let items = itemList.getElementsByTagName("li");
+    // console.log(items)
+    // convert to array 
+    Array.from(items).forEach(item =>{
+        let itemName = item.firstChild.textContent;
+        // console.log(itemName)
+        if(itemName.toLowerCase().indexOf(text) != -1 ){
+            item.style.display = "block";
+        }else{
+            item.style.display = "none";
         }
     })
-}
+});
